@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form.</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            box-sizing: border-box;
+            
+        }
+        label{
+            font-weight: bold;
+        }
+        form{
+            width:600px;
+            display:block;
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+            font-size: 25px;
+            margin-bottom:10px;
+
+        }
+        .inputgroup{
+            width: 100%;
+            display:grid;
+            grid-template-columns:1fr 3fr;
+            margin-bottom: 10px;
+        }
+        .inputgroup input, .inputgroup textarea{
+            width: 100%;
+            display: block;
+            padding: 10px;
+        }
+
+        fieldset{
+            width: 100%;
+            margin-bottom: 10px;
+            display: block;
+            padding: 10px;
+        }
+        .fieldgroup{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+        #reg{
+            width: 100%;
+            display: block;
+            padding: 10px;
+            margin: auto;
+            text-align: center;
+            background-color: beige;
+        }
+        #reg button{
+            font-weight: bold;
+            color: blue;
+            padding: 10px;
+            margin-left: 5px;
+            background-color: orange;
+            border: none;
+            outline: none;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Student Registration Form.</h1>
+
+    <form method="post" action="student.php">
+        <div class="inputgroup">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required><br>
+        </div>
+        <div class="inputgroup">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" id="dob" required><br>
+        </div>    
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <div class="fieldgroup">
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="other" name="other" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+        </fieldset>
+        
+        <div class="inputgroup">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="5" required></textarea>
+        </div>
+
+        <div class="inputgroup">
+            <label for="telephone">Telephone:</label>
+            <input type="tel" id="telephone" name="telephone" required>
+        </div>
+
+        <div class="inputgroup">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="inputgroup">
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
+        </div>
+          
+        <div id="reg">
+            <button type="submit">Register</button>
+            <button type="button" onclick="cancelRegistration()">Cancel</button>
+        </div>
+        <script>
+            function cancelRegistration() {
+                window.location.href = "index.php";
+            }
+        </script>
+
+    </form>
+</body>
+</html>
